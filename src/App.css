@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -37,21 +38,45 @@
   }
 }
 
-header {
+html {
+  scroll-behavior: smooth;
+}
+
+header{
   text-align: center;
   padding: 20px;
   background-color: #f8f9fa;
 }
 
-header h1 {
+header h1{
   margin: 0;
-  color: #333;
+  color:var(--branco);
+}
+
+header h2{
+  color: var(--branco);
 }
 
 header p {
-  color: #666;
+  color: var(--cinza-claro);
   font-size: 16px;
 }
+
+
+footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+footer h2 {
+  color: var(--branco);
+}
+footer p {
+  color: var(--cinza-claro);
+  font-size: 16px;
+}
+
 
 .about {
   text-align: left;
@@ -118,16 +143,228 @@ header p {
   font-size: 16px;
 }
 
-.contact {
-  background-color: #f8f9fa;
-  padding: 20px;
-  margin-top: 20px;
-  text-align: center;
+
+
+/* Cores */
+:root {
+  --azul-marinho: #0a3a5f; /* substitua pelo código exato de cor azul da imagem */
+  --cinza-escuro: #4a4a4a; /* ajuste para corresponder à imagem */
+  --cinza-claro: #dcdcdc; /* ajuste para corresponder à imagem */
+  --branco: #ffffff;
+  --azul-ciano: #17a2b8; /* ajuste para corresponder à imagem */
+  --hover-azul-ciano: #138496; /* um tom mais escuro para o hover */
+  --header-height:100px;
+  --footer-height:100px;
 }
-.contact h2 {
-  color: #333;
+
+/* Fontes */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+body, button, input, textarea {
+  font-family: 'Roboto', sans-serif;
+  color: var(--cinza-escuro);
 }
-.contact p {
-  color: #666;
-  font-size: 16px;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  color: var(--azul-marinho);
+}
+
+/* Estrutura Básica */
+body {
+  background-color: var(--branco);
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  background-color: var(--azul-marinho);
+  color: var(--cinza-claro);
+  padding: 1em 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Ajuste o z-index para garantir que o cabeçalho fique acima de outros elementos */
+  /* Estilos adicionais para o header aqui */
+}
+footer{
+  background-color: var(--azul-marinho);
+  color: var(--cinza-claro);
+  padding: 1em 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+section {
+  padding: 2em 0;
+}
+
+/* Alternando fundos de seções */
+section:nth-child(even) {
+  background-color: var(--cinza-claro);
+}
+
+/* Textos */
+p {
+  color: var(--cinza-escuro);
+}
+
+a {
+  color: var(--azul-ciano);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--hover-azul-ciano);
+}
+
+/* Botões e Inputs */
+button, input[type="submit"] {
+  background-color: var(--azul-ciano);
+  color: var(--branco);
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: var(--hover-azul-ciano);
+}
+
+input, textarea {
+  border: 1px solid var(--cinza-claro);
+  padding: 0.5em;
+}
+
+/* Bordas e Linhas */
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--cinza-claro);
+}
+
+/* Margens e Espaçamentos */
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Classes de Utilidade para Espaçamentos */
+.mt-1 { margin-top: 1em; }
+.mb-1 { margin-bottom: 1em; }
+.pt-1 { padding-top: 1em; }
+.pb-1 { padding-bottom: 1em; }
+
+
+/* Navegação geral */
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation li {
+  padding: 0.5em 1em;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: var(--cinza-escuro);
+}
+/* Navegação fixa em todas as telas */
+.navigation {
+  position: fixed; /* Já é fixo, mas vamos garantir */
+  top: 0; /* Fixo no topo */
+  z-index: 5; /* Menor que o header para não sobrepor quando a tela rolar para baixo */
+  overflow-x: hidden; /* Prevenir barra de rolagem horizontal */
+  height: 100vh; /* Ocupar a altura total da tela */
+}
+
+
+/* Estilos para telas grandes (navegação horizontal) */
+@media (min-width: 768px) {
+  .navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--branco); /* ou qualquer outra cor desejada */
+    position: static; /* ou `relative` dependendo de seu layout */
+    z-index: 10;
+    left: auto; /* Resetando o posicionamento esquerdo */
+    width: auto; /* Largura automática para se ajustar ao conteúdo */
+    top: var(--header-height); /* Ajuste de acordo com a altura do seu header */
+  }
+
+  .navigation ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .navigation li {
+    margin-right: 20px; /* Ajuste conforme necessário */
+  }
+
+  .navigation a {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+
+/* Estilos para telas pequenas (navegação lateral) */
+@media (max-width: 768px) {
+  .main-content { /* Adicione esta classe ao elemento que envolve seu conteúdo principal */
+    padding-left: 60px; /* Deve ser igual ou maior que a largura da barra de navegação */
+  }
+  .content{
+    margin-top: var(--header-height); /* Ajuste conforme necessário */
+    margin-left: 60px; /* deve ser igual ou maior que a largura da barra de navegação */
+    padding-bottom: var(--footer-height); /* Ajuste conforme necessário */
+  }
+  .navigation {
+    position: static;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100vh;
+    background-color: var(--azul-ciano);
+    z-index: 100; /* Deve ser maior que o conteúdo para ficar por cima */
+    left: 0; /* Fixo no lado esquerdo */
+    width: 60px; /* Largura para os ícones quando não expandido */
+  }
+  .navigation.open {
+    width: 200px; /* Largura quando expandido */
+  }
+
+  .navigation.open a span {
+    display: inline; /* Mostrar texto quando expandido */
+  }
+  .navigation a {
+    justify-content: center; /* Centraliza os ícones */
+  }
+
+  .navigation a span {
+    display: none; /* Esconder o texto nos links */
+  }
+  .menu-button {
+    display: block; /* Mostrar o botão em telas pequenas */
+  }
+}
+.menu-button {
+  display: none; /* Esconde o botão em telas grandes */
+  position: fixed;
+  top: 0; /* Ajuste conforme necessário */
+  left: 0; /* Ajuste conforme necessário */
+  z-index: 11; /* Superior à barra de navegação */
+}
+
+@media (max-width: 768px) {
+  .menu-button {
+    display: block; /* Mostrar o botão em telas pequenas */
+  }
 }
