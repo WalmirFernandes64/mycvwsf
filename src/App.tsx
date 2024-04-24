@@ -1,30 +1,31 @@
-import React from 'react';
-import './App.css';
-import Header from './components/Header/Header';
-import About from './components/About/About';
-import Experience from './components/Experience/Experience';
-import Education from './components/Education/Education';
-import Skill from './components/Skill/Skill';
-import Contact from './components/Footer/Contact';
-import Project from './components/Project/Project';
-import Navigation from './components/Navigation';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import Sidebar from './components/Sidebar'
 
-function App() {
+import Inicio from './pages/Inicio';
+import SobreMim from './pages/SobreMim';
+import Experiencias from './pages/Experiencias';
+import Formacoes from './pages/Formacoes';
+import Habilidades from './pages/Habilidades';
+import Projetos from './pages/Projetos';
+
+const App: React.FunctionComponent = () => {
   return (
-    <div className="App">
-      <Header />
-      <Navigation />
-      <div className='content'>
-        <About />
-        <Experience />
-        <Education />
-        <Skill />
-        <Project />
-      </div>
-      <Contact />
-    </div>
-  );
+    <>
+      <Router>
+        <Sidebar />
+        <Routes>
+          <Route path='/' element={<Inicio />} />
+          <Route path='/sobremim' element={<SobreMim />} />            
+          <Route path='/experiencias' element={<Experiencias />} />
+          <Route path='/formacoes' element={<Formacoes />} />
+          <Route path='/habilidades' element={<Habilidades />} />
+          <Route path='/projetos' element={<Projetos />} />    
+        </Routes>
+      </Router> 
+    </>
+  )
 }
 
-export default App;
+export default App
