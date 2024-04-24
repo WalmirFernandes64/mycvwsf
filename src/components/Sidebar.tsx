@@ -10,8 +10,14 @@ const Navbar = styled.div`
     display: flex;
     justify-content: start;
     align-items: center;
-    height: 3.5rem;
-    background-color: #000080;
+    height: 60px; /* Ajustado para coincidir com o tamanho do logotipo */
+    background-color: #002035; /* Azul Marinho */
+`
+
+const Logo = styled.img`
+    height: 60px; // Altura igual à da Navbar
+    position: absolute;
+    right: 10px;
 `
 
 const MenuIconOpen = styled(Link)`
@@ -19,7 +25,7 @@ const MenuIconOpen = styled(Link)`
     justify-content: start;
     font-size: 1.5rem;
     margin-left: 2rem;
-    color: #ffffff;
+    color: #ffffff; // Texto branco
 `
 
 const MenuIconClose = styled(Link)`
@@ -28,17 +34,17 @@ const MenuIconClose = styled(Link)`
     font-size: 1.5rem;
     margin-top: 0.75rem;
     margin-right: 1rem;
-    color: #ffffff;
+    color: #ffffff; // Texto branco
 `
 
 const SidebarMenu = styled.div<{close: boolean}>`
     width: 250px;
     height: 100vh;
-    background-color: #000080;
+    background-color: #002035; // Azul Marinho
     position: fixed;
     top: 0;
     left: ${({ close}) => close ? '0' : '-100%'};
-    transition: .6s;
+    transition: left 0.6s; /* Suavização da abertura/fechamento */
 `
 
 const MenuItems = styled.li`
@@ -57,14 +63,15 @@ const MenuItemLinks = styled(Link)`
     padding: 0 2rem;
     font-size: 20px;
     text-decoration: none;
-    color: #ffffff;
+    color: #ffffff; // Texto branco
 
     &:hover {
-        background-color: #ffffff;
-        color: #000080;
+        background-color: #00bfff; // Azul Ciano para hover
+        color: #002035; // Texto azul marinho
         width: 100%;
         height: 45px;
         text-align: center;
+        text-size: 5%;
         border-radius: 5px;
         margin: 0 2rem;
     }
@@ -76,6 +83,7 @@ const Sidebar: React.FunctionComponent = () => {
     return (
         <>
             <Navbar>
+                <Logo src={process.env.PUBLIC_URL + '/logo100x100.png'} alt="Logo" />
                 <MenuIconOpen to="#" onClick={showSidebar}>
                     <FaIcons.FaBars />
                 </MenuIconOpen>

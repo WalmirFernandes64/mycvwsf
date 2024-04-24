@@ -1,17 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
-
-const HabilidadesText = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
-    height: 70vh;
-`
+import '../styles/global.css'
 
 const Habilidades: React.FunctionComponent = () => {
     return (
-        <HabilidadesText>Habilidades</HabilidadesText>
+        <div className='corpoPagina2'>Habilidades</div>
     )
 }
 

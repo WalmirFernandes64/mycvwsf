@@ -1,4 +1,4 @@
-Navbar{
+.navbar{
     display: flex;
     justify-content: start;
     align-items: center;
@@ -6,7 +6,7 @@ Navbar{
     background-color: #000080;
 }
 
-MenuIconOpen{
+.menuIconOpen{
     display: flex;
     justify-content: start;
     font-size: 1.5rem;
@@ -14,7 +14,7 @@ MenuIconOpen{
     color: #ffffff;
 }
 
-MenuIconClose{
+.menuIconClose{
     display: flex;
     justify-content: end;
     font-size: 1.5rem;
@@ -23,7 +23,7 @@ MenuIconClose{
     color: #ffffff;
 }
 
-SidebarMenu{
+.sidebarMenu{
     width: 250px;
     height: 100vh;
     background-color: #000080;
@@ -33,7 +33,7 @@ SidebarMenu{
     transition: .6s;
 }
 
-MenuItemLinks{
+.menuItemLinks{
     display: flex;
     align-items: center;
     padding: 0 2rem;
@@ -42,7 +42,7 @@ MenuItemLinks{
     color: #ffffff;
 }
 
-MenuItemLinks:hover{
+.menuItemLinks:hover{
     background-color: #ffffff;
     color: #000080;
     width: 100%;

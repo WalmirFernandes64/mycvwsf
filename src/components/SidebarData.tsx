@@ -10,7 +10,7 @@ export const SidebarData = [
     {
         title: 'Sobre Mim',
         path: '/sobremim',
-        icon: <FaIcons.FaUsers />
+        icon: <FaIcons.FaUser />
     },
     {
         title: 'Experiencia',
