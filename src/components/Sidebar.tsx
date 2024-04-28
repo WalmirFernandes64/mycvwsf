@@ -82,7 +82,7 @@ const Sidebar: React.FunctionComponent = () => {
     const showSidebar = () => setClose(!close)
     return (
         <>
-            <Navbar>
+            <Navbar className='header'>
                 <Logo src={process.env.PUBLIC_URL + '/logo100x100.png'} alt="Logo" />
                 <MenuIconOpen to="#" onClick={showSidebar}>
                     <FaIcons.FaBars />

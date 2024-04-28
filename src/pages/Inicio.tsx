@@ -4,7 +4,7 @@ import '../styles/global.css'
 const Inicio: React.FunctionComponent = () => {
     return (
         <div className='corpoPagina1'>
-            <div className="header">
+            <div className='home0001'>
                 <div>
                     <img src={process.env.PUBLIC_URL + '/Picture1.png'} alt="Walmir Fernandes" className="fotoPerfil" />
                 </div>

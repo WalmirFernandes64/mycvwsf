@@ -15,8 +15,6 @@ const App: React.FunctionComponent = () => {
     <>
       <Router>
         <Sidebar />
-        <Inicio/>
-        <SobreMim/>
         <Routes>
           <Route path='/' element={<Inicio />} />
           <Route path='/sobremim' element={<SobreMim />} />            
@@ -25,6 +23,8 @@ const App: React.FunctionComponent = () => {
           <Route path='/habilidades' element={<Habilidades />} />
           <Route path='/projetos' element={<Projetos />} />    
         </Routes>
+        <SobreMim/>
+        <Experiencias/>
       </Router> 
 
     </>
